@@ -14,7 +14,7 @@ import java.util.UUID;
 
 @Path("/customers")
 public class CustomerResource {
-    @Channel("2mgt1okd-default")
+    @Channel("2mgt1okd-customers-requests")
     Emitter<String> customerRequestEmiter;
 
     @POST
@@ -26,7 +26,7 @@ public class CustomerResource {
         return uuid.toString();
     }
 
-    @Channel("2mgt1okd")
+    @Channel("2mgt1okd-customers")
     Multi<Customer> customers;
 
     @GET
